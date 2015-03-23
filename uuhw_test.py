@@ -82,7 +82,7 @@ def get_price(text):
 			return ret[0]
 def main():
 	host ="http://www.uuhw.cn"
-	url = 'http://www.uuhw.cn/api.php?mod=ad&adid=custom_3'
+	url = "http://www.uuhw.cn/api.php?mod=ad&adid=custom_3&jdfwkey=yewk52"
 	r = requests.get(url)
 	doc = lxml.html.document_fromstring(r.text)
 	r.close()
@@ -124,4 +124,5 @@ def main():
 				insert into travel_signup(name,tid) values("%s",%d)
 				''',p,tid)
 if __name__  == '__main__':
+	create_db()
 	main()
